@@ -1,0 +1,51 @@
+@grid-columns: 12;
+@grid-gutter-width: 20px;
+@screen-sm:  768px;
+@screen-md: 992px;
+@screen-lg:   1200px;
+
+@brand-color: #38EB8F;
+
+@font-size: 14px;
+@body-bg: #FFF;
+@text-color: #121212;
+@link-color: @brand-color;
+@link-hover-color: darken(@brand-color, 20%);
+
+@border-radius: 4px;
+@border-radius-sm: 3px;
+@border-radius-lg: 6px;
+
+@navbar-height: 50px;
+@navbar-font-size: 14px;
+
+@navbar-background-color: #333;
+@navbar-link-color: #AAA;
+@navbar-link-color-hover: #FFF;
+@navbar-link-hover-background: #111;
+@navbar-link-padding: 0 16px;
+@navbar-radius: 0;
+
+@modal-head-background-color: #333;
+@modal-head-color: #FFF;
+@modal-body-background-color: #FEFEFE;
+@modal-body-color: #212121;
+@modal-close-color: #AAA;
+@modal-radius: 0;
+
+@button-radius: @border-radius;
+@button-radius-sm: @border-radius-sm;
+@button-radius-lg: @border-radius-lg;
+
+@import 'id/base';
+
+@black: #0C090D;
+@pink: #E01A4F;
+@orange: #F15946;
+@yellow: #F9C22E;
+@blue: #53B3CB;
+.button-variant(~"black", #FFF, #212121);
+.button-variant(~"pink", #FFF, #212121);
+.button-variant(~"orange", #FFF, #212121);
+.button-variant(~"yellow", #FFF, #212121);
+.button-variant(~"blue", #FFF, #212121);

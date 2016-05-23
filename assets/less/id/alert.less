@@ -1,0 +1,17 @@
+.alert {
+    padding: 10px;
+    .close-btn {
+        .pull-right;
+    }
+}
+
+.alert-variant(@class; @background; @text-color) {
+    .alert {
+        &.@{class} {
+            background: @background;
+            color: @text-color;
+        }
+    }
+}
+
+.alert-variant(~"primary"; rgba(0,0,0,0.5); #000);

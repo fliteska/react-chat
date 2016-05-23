@@ -1,0 +1,29 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    background-color: @body-bg;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: @font-size;
+    line-height: (@font-size * 1.425);
+    color: @text-color;
+}
+small {
+    font-size: @font-size * 0.75;
+}
+h1 {
+    font-size: @font-size * 3;
+    line-height: (@font-size * 1.425) * 3;
+}
+a {
+    color: @link-color;
+    &:hover {
+        color: @link-hover-color;
+    }
+}
+strong {
+    font-weight: bold;
+}
+em {
+    font-style: italic;
+}

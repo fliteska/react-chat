@@ -1,0 +1,82 @@
+.button-variant(@class; @light-color; @dark-color) {
+    .button {
+        &.@{class} {
+            .button-direct-mixin(@class, @light-color, @dark-color);
+        }
+    }
+}
+
+.button-direct-mixin(@class; @light-color; @dark-color) {
+    background: @@class;
+    border: 1px solid darken(@@class, 10%);
+    color: @light-color;
+    text-shadow: 1px 1px 0 rgba(140,140,140,0.6) , -1px -1px 1px rgba(0,0,0,0.67);
+    &:hover,
+    &.nav-button,
+    &.active {
+        background: darken(@@class, 5%);
+    }
+    &.inverse {
+        background: @dark-color;
+        border: 1px solid @@class;
+        color: @@class;
+        &:hover {
+            background: darken(@dark-color, 5%);
+        }
+    }
+}
+
+.button {
+    border: none;
+    .border-radius(@button-radius, @button-radius, @button-radius, @button-radius);
+    cursor: pointer;
+    padding: 6px 12px;
+    line-height: 20px;
+
+    &:disabled {
+        background: #AAA;
+        &:hover {
+            background: #AAA;
+        }
+    }
+
+    &.xl {
+        .border-radius(@button-radius-lg, @button-radius-lg, @button-radius-lg, @button-radius-lg);
+        font-size: 125%;
+        padding: 15px 25px;
+    }
+    &.lg {
+        .border-radius(@button-radius-lg, @button-radius-lg, @button-radius-lg, @button-radius-lg);
+        font-size: 125%;
+        padding: 10px 15px;
+    }
+    &.sm {
+        .border-radius(@button-radius-sm, @button-radius-sm, @button-radius-sm, @button-radius-sm);
+        font-size: 75%;
+        padding: 6px 8px;
+    }
+    &.xs {
+        .border-radius(@button-radius-sm, @button-radius-sm, @button-radius-sm, @button-radius-sm);
+        font-size: 75%;
+        padding: 3px 4px;
+    }
+    &.block {
+        display: block;
+        width: 100%;
+    }
+}
+
+.button-group {
+    clear: both;
+    display: block;
+    button {
+        .border-radius(0,0,0,0);
+        display: inline-block;
+    }
+    button:first-child {
+        .border-radius(@button-radius, 0, @button-radius, 0);
+    }
+    button:last-child {
+        .border-radius(0, @button-radius, 0, @button-radius);
+    }
+}
