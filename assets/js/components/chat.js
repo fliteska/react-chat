@@ -22,7 +22,7 @@ var ChatBox = React.createClass({
     },
     componentDidMount: function() {
 
-        this.socket = new WebSocket("ws://localhost:30000");
+        this.socket = new WebSocket("ws://localhost:3000");
         this.socket.onopen = function() {
             this.setState({status: 'active'});
             var data = {
@@ -120,8 +120,8 @@ var ChatMessages = React.createClass({
             <div className="col xs12">
                 <ul className="list-group">
                     {
-                        this.props.data.map(function(msg) {
-                            return <li key={msg.id}>
+                        this.props.data.map(function(msg, i) {
+                            return <li key={i}>
                                 <strong style={{color: msg.color}}>{msg.name}</strong> says: {msg.text}
                             </li>
                         })
